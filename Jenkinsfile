@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-               git 'https://github.com/RP-Guruh/bahan_latihan_jenkins.git' // ambil dari main
+               git branch: 'main', url: 'https://github.com/RP-Guruh/bahan_latihan_jenkins.git'
             }
         }
 
@@ -16,7 +16,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'cp -r * /var/www/html/bahan_latihan_jenkins'
+                sh 'cp -r * /var/www/html/'
             }
         }
     }
