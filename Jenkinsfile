@@ -16,7 +16,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'cp -r * /var/www/html/bahan_latihan_jenkins'
+                sh 'rsync -avz --exclude=".git" --exclude="Jenkinsfile" ./ /var/www/html/bahan_latihan_jenkins/'
             }
         }
     }
